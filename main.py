@@ -20,7 +20,7 @@ driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 wait = WebDriverWait(driver, 5)
 keywords = ["best 10th gen intel cpu"]
-keyword_num = 1
+keyword_num = 0
 keyword = keywords[keyword_num]
 url = f"https://www.amazon.com/s?k={keyword.replace(' ', '+')}&ref=nb_sb_noss"
 link_wait_time = 4.2
