@@ -11,8 +11,9 @@ options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 # options.add_argument('--headless')
 options.add_argument('--no-sandbox')
-options.add_argument('--log-level=3')
 path = r"B:\Ahmed'sCode\Linkedin-Leads-Generation\allforleads"
+options.add_argument(f'--load-extension={path}')
+options.add_argument('--log-level=3')
 
 # -------------------------------------------------------#
 
