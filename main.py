@@ -37,3 +37,5 @@ with open('cookies.pkl', 'rb') as f:
     cookies = pickle.load(f)
 for cookie in cookies:
     driver.add_cookie(cookie)
+driver.refresh()
+time.sleep(10000)
