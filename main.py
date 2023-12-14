@@ -30,3 +30,6 @@ print(f"[+] Requesting the url search of Linkedin. Waiting for {link_wait_time} 
 driver.get(url)
 time.sleep(link_wait_time)
 user_input = input("Are you done? [y/n]: ")
+cookies = driver.get_cookies()
+with open('cookies.pkl', 'wb') as f:
+    pickle.dump(cookies, f)
