@@ -15,6 +15,10 @@ path = r"B:\Ahmed'sCode\Linkedin-Leads-Generation\allforleads"
 options.add_argument(f'--load-extension={path}')
 options.add_argument('--log-level=3')
 
+with open('output.csv', 'w', newline='', encoding="utf-8") as f:
+    writer = csv.writer(f)
+    writer.writerow(['Name', 'Headline', 'Linkedin URL', 'Email 1', 'Email 2', 'Phone Number 1', 'Phone Number 2'])
+
 # -------------------------------------------------------#
 
 print('[+] This is made by "Ahmed Mujtaba" ')
@@ -24,7 +28,7 @@ wait = WebDriverWait(driver, 5)
 keywords = ["ceo"]
 keyword_num = 0
 keyword = keywords[keyword_num]
-url = f"https://www.linkedin.com/search/results/people/?keywords={keyword.replace(' ','+')}&origin=GLOBAL_SEARCH_HEADER&sid=%3BLX"
+url = f"https://www.linkedin.com/search/results/people/?keywords={keyword.replace(' ','+')}"
 link_wait_time = 4.2
 print(f"[+] Requesting the url search of Linkedin. Waiting for {link_wait_time} second/s")
 driver.get(url)
@@ -55,17 +59,60 @@ for i in range(50):
         headline = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal'])[{cnt}]").text
         profile_url = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a)[{cnt}]").get_attribute('href')
         lead_name = str(lead_name).split(' ')
-        lead_name = f"{lead_name[0]} {lead_name[1]}"
+        lead_name = f"{lead_name[0]} {lead_name[1]}".replace('View','').replace('\n','')
+        driver.execute_script(f"window.open('{profile_url}');")
+        time.sleep(1)
+        driver.switch_to.window(driver.window_handles[1])
+        time.sleep(2)
+        driver.refresh()
+        time.sleep(2)
+        wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extension_company_product_name']//span[1]")))
+        try:
+            wait.until(EC.presence_of_element_located((By.ID,"KLMUnlockProfileInformation"))).click()
+            time.sleep(2)
+        except:
+            try:
+                time.sleep(2)
+                wait.until(EC.presence_of_element_located((By.ID,"KLMUnlockProfileInformation"))).click()
+                time.sleep(2)
+            except:
+                try:
+                    time.sleep(1)
+                    wait.until(EC.presence_of_element_located((By.ID,"KLMUnlockProfileInformation"))).click()
+                    time.sleep(2)
+                except:
+                    try:
+                        time.sleep(2)
+                        wait.until(EC.presence_of_element_located((By.ID,"KLMUnlockProfileInformation"))).click()
+                        time.sleep(2)
+                    except:pass
+
+        email1 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_1']"))).text
+        email2 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_2']"))).text
+        phone_number1 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_3']"))).text
+        phone_number2 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_4']"))).text
+        # time.sleep(500000)
+        driver.close()
+        driver.switch_to.window(driver.window_handles[0])
         print("Name : ", lead_name)
         print("Headline : ", headline)
         print("Linkedin URL : ", profile_url)
+        print("Email [1] : ", email1)
+        print("Email [2] : ", email2)
+        print("Phone Number [1] : ", phone_number1)
+        print("Phone Number [2] : ", phone_number2)
+        with open('output.csv', 'a', newline='', encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow([lead_name, headline, url, email1, email2, phone_number1, phone_number2])
+        
         found_lead += 1
+        print(f"Found [{found_lead}] LEADs")
+        print("-----------------------------------------------------")
     if cnt == len(all_leads):
-        next_button = wait.until(EC.presence_of_element_located((By.XPATH,'//button[@aria-label="Next"]')))
         last_lead = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal'])[{cnt}]")
         driver.execute_script("arguments[0].scrollIntoView();", last_lead)
         time.sleep(2)
-        next_button.click()
+        wait.until(EC.presence_of_element_located((By.XPATH,'//button[@aria-label="Next"]'))).click()
         page_no += 1 
         print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")       
         time.sleep(2)
