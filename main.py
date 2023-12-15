@@ -54,7 +54,8 @@ for i in range(50):
     if "LinkedIn" not in str(lead_name):
         headline = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal'])[{cnt}]").text
         profile_url = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a)[{cnt}]").get_attribute('href')
-        lead_name = str(lead_name).split(' ')[1:2]
+        lead_name = str(lead_name).split(' ')
+        lead_name = f"{lead_name[0]} {lead_name[1]}"
         print("Name : ", lead_name)
         print("Headline : ", headline)
         print("Linkedin URL : ", profile_url)
