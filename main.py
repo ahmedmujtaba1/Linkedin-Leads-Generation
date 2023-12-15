@@ -38,4 +38,16 @@ with open('cookies.pkl', 'rb') as f:
 for cookie in cookies:
     driver.add_cookie(cookie)
 driver.refresh()
-time.sleep(10000)
+cnt = 0
+time.sleep(4.5)
+flag = True
+all_leads = wait.until(EC.presence_of_element_located((By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a")))
+while flag:
+    cnt += 1
+    lead_name = wait.until(EC.presence_of_element_located((By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a"))).text
+    if "Linkedin" not in str(lead_name):
+        headline = driver.find_element(By.XPATH,"//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal']").text
+        profile_url = driver.find_element(By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a").get_attribute('href')
+        print("Name : ", lead_name)
+        print("Headline : ", headline)
+        print("Headline : ", profile_url)
