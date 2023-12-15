@@ -21,7 +21,7 @@ print('[+] This is made by "Ahmed Mujtaba" ')
 driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 wait = WebDriverWait(driver, 5)
-keywords = ["best 10th gen intel cpu"]
+keywords = ["ceo"]
 keyword_num = 0
 keyword = keywords[keyword_num]
 url = f"https://www.linkedin.com/search/results/people/?keywords={keyword.replace(' ','+')}&origin=GLOBAL_SEARCH_HEADER&sid=%3BLX"
@@ -47,8 +47,8 @@ all_leads = wait.until(EC.presence_of_all_elements_located((By.XPATH,"//li[@clas
 try:
     driver.find_element(By.XPATH,"(//button[@class='msg-overlay-bubble-header__control msg-overlay-bubble-header__control--new-convo-btn artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--1 artdeco-button--tertiary ember-view'])[2]").click()
 except:pass
-while flag:
-    print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")
+print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")
+for i in range(50):
     cnt += 1
     lead_name = wait.until(EC.presence_of_element_located((By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a"))).text
     if "LinkedIn" not in str(lead_name):
@@ -56,10 +56,12 @@ while flag:
         profile_url = driver.find_element(By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a").get_attribute('href')
         print("Name : ", lead_name)
         print("Headline : ", headline)
-        print("Headline : ", profile_url)
+        print("Linkedin URL : ", profile_url)
         found_lead += 1
     if cnt == len(all_leads):
-        driver.find_element(By.XPATH,'//button[@aria-label="Next"]').click()
+        wait.until(EC.presence_of_element_located((By.XPATH,'//button[@aria-label="Next"]'))).click()
         page_no += 1 
+        print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")       
         time.sleep(2)
+        
         cnt = 0 
