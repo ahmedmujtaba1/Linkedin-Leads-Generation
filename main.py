@@ -104,7 +104,7 @@ for i in range(50):
         print("Phone Number [2] : ", phone_number2)
         with open('output.csv', 'a', newline='', encoding="utf-8") as f:
             writer = csv.writer(f)
-            writer.writerow([lead_name, headline, url, email1, email2, phone_number1, phone_number2])
+            writer.writerow([lead_name, headline, profile_url, email1, email2, phone_number1, phone_number2])
         
         found_lead += 1
         print(f"Found [{found_lead}] LEADs")
