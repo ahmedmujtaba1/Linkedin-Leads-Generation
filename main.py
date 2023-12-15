@@ -41,8 +41,9 @@ driver.refresh()
 cnt = 0
 time.sleep(4.5)
 flag = True
+page_no = 0
 found_lead = 0
-all_leads = wait.until(EC.presence_of_element_located((By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a")))
+all_leads = wait.until(EC.presence_of_all_elements_located((By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a")))
 try:
     driver.find_element(By.XPATH,"(//button[@class='msg-overlay-bubble-header__control msg-overlay-bubble-header__control--new-convo-btn artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--1 artdeco-button--tertiary ember-view'])[2]").click()
 except:pass
@@ -50,10 +51,13 @@ while flag:
     cnt += 1
     lead_name = wait.until(EC.presence_of_element_located((By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a"))).text
     if "LinkedIn" not in str(lead_name):
-
         headline = driver.find_element(By.XPATH,"//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal']").text
         profile_url = driver.find_element(By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a").get_attribute('href')
         print("Name : ", lead_name)
         print("Headline : ", headline)
         print("Headline : ", profile_url)
         found_lead += 1
+    if cnt == len(all_leads):
+        driver.find_element(By.XPATH,'//button[@aria-label="Next"]').click()
+        page_no += 1 
+
