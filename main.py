@@ -50,18 +50,20 @@ except:pass
 print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")
 for i in range(50):
     cnt += 1
-    lead_name = wait.until(EC.presence_of_element_located((By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a"))).text
+    lead_name = wait.until(EC.presence_of_element_located((By.XPATH,f"(//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a)[{cnt}]"))).text
     if "LinkedIn" not in str(lead_name):
-        headline = driver.find_element(By.XPATH,"//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal']").text
-        profile_url = driver.find_element(By.XPATH,"//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a").get_attribute('href')
+        headline = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal'])[{cnt}]").text
+        profile_url = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a)[{cnt}]").get_attribute('href')
+        lead_name = str(lead_name).split(' ')[1:2]
         print("Name : ", lead_name)
         print("Headline : ", headline)
         print("Linkedin URL : ", profile_url)
         found_lead += 1
     if cnt == len(all_leads):
         next_button = wait.until(EC.presence_of_element_located((By.XPATH,'//button[@aria-label="Next"]')))
-        driver.execute_script("arguments[0].scrollIntoView();", next_button)
-        time.sleep(1)
+        last_lead = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal'])[{cnt}]")
+        driver.execute_script("arguments[0].scrollIntoView();", last_lead)
+        time.sleep(2)
         next_button.click()
         page_no += 1 
         print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")       
