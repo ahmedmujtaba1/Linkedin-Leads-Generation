@@ -7,6 +7,7 @@ import undetected_chromedriver as uc
 
 #--------------------------------------------------------#
 
+
 options = webdriver.ChromeOptions()
 options.add_argument('--start-maximized')
 # options.add_argument('--headless')
