@@ -59,7 +59,10 @@ for i in range(50):
         print("Linkedin URL : ", profile_url)
         found_lead += 1
     if cnt == len(all_leads):
-        wait.until(EC.presence_of_element_located((By.XPATH,'//button[@aria-label="Next"]'))).click()
+        next_button = wait.until(EC.presence_of_element_located((By.XPATH,'//button[@aria-label="Next"]')))
+        driver.execute_script("arguments[0].scrollIntoView();", next_button)
+        time.sleep(1)
+        next_button.click()
         page_no += 1 
         print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")       
         time.sleep(2)
