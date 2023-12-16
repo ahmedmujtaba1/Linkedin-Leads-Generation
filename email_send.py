@@ -1090,7 +1090,7 @@ body {{
                                                                         <table cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href="https://viewstripo.email"><img class="adapt-img p_image" src="https://tlr.stripocdn.email/content/guids/CABINET_829fb87b0e9e371435463b4724e5762a2905c2f1ea278b2b1beb8a6a72361d58/images/pexelsartempodrez5439898.jpeg" alt style="display: block;" width="300"></a></td>
+                                                                                    <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href="https://www.fiverr.com/mohsinharoon77/do-business-ecommerce-website-development-in-django-nextjs-and-wordpress"><img class="adapt-img p_image" src="https://imgtr.ee/images/2023/12/16/75df017ad9e18075d01821ab4235f753.jpeg" alt style="display: block;" width="300"></a></td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -1110,7 +1110,8 @@ body {{
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text es-p5b" esd-links-underline="none">
-                                                                                        <h2><a target="_blank" style="text-decoration: none;" href="https://viewstripo.email">Shop best seller&nbsp;→</a></h2>
+                                                                                        <p> Elevate your online presence with our top-notch web development services. From eye-catching design to seamless functionality, we create websites that leave a lasting impression.</p>
+                                                                                        <h2><a target="_blank" style="text-decoration: none;" href="https://www.fiverr.com/mohsinharoon77/do-business-ecommerce-website-development-in-django-nextjs-and-wordpress">Order Our Web Development Services&nbsp;→</a></h2>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
@@ -1133,67 +1134,6 @@ body {{
                                                         <!--[if mso]></td></tr></table><![endif]-->
                                                     </td>
                                                 </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table cellpadding="0" cellspacing="0" class="es-footer esd-footer-popover" align="center">
-                            <tbody>
-                                <tr>
-                                    <td class="esd-stripe" align="center" esd-custom-block-id="819265">
-                                        <table class="es-footer-body" align="center" cellpadding="0" cellspacing="0" width="600" bgcolor="rgba(0, 0, 0, 0)">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="esd-structure es-p30t es-p30b es-p20r es-p20l" align="left" esd-custom-block-id="819264">
-                                                        <table cellpadding="0" cellspacing="0" width="100%">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td width="560" class="esd-container-frame" align="left">
-                                                                        <table cellpadding="0" cellspacing="0" width="100%">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="esd-block-menu" esd-tmp-menu-padding="10|10" esd-tmp-menu-color="#ffffff" esd-tmp-divider="0|solid|#ffffff" esd-tmp-menu-font-size="12px" esd-tmp-menu-font-weight="normal">
-                                                                                        <table cellpadding="0" cellspacing="0" width="100%" class="es-menu">
-                                                                                            <tbody>
-                                                                                                <tr class="links">
-                                                                                                    <td align="center" valign="top" width="25%" class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px;"><a target="_blank" href="https://viewstripo.email" style="font-weight: normal;">About us</a></td>
-                                                                                                    <td align="center" valign="top" width="25%" class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px;"><a target="_blank" href="https://viewstripo.email" style="font-weight: normal;">News</a></td>
-                                                                                                    <td align="center" valign="top" width="25%" class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px;"><a target="_blank" href="https://viewstripo.email" style="font-weight: normal;">Career</a></td>
-                                                                                                    <td align="center" valign="top" width="25%" class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px;"><a target="_blank" href="https://viewstripo.email" style="font-weight: normal;">The shops</a></td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="center" class="esd-block-social es-p10t es-p10b" style="font-size:0">
-                                                                                        <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social">
-                                                                                            <tbody>
-                                                                                                <tr>
-                                                                                                    <td align="center" valign="top" class="es-p20r" esd-tmp-icon-type="facebook"><a target="_blank" href="https://viewstripo.email"><img title="Facebook" src="https://tlr.stripocdn.email/content/assets/img/social-icons/circle-black-bordered/facebook-circle-black-bordered.png" alt="Fb" width="24" height="24"></a></td>
-                                                                                                    <td align="center" valign="top" class="es-p20r" esd-tmp-icon-type="twitter"><a target="_blank" href="https://viewstripo.email"><img title="Twitter" src="https://tlr.stripocdn.email/content/assets/img/social-icons/circle-black-bordered/twitter-circle-black-bordered.png" alt="Tw" width="24" height="24"></a></td>
-                                                                                                    <td align="center" valign="top" class="es-p20r" esd-tmp-icon-type="instagram"><a target="_blank" href="https://viewstripo.email"><img title="Instagram" src="https://tlr.stripocdn.email/content/assets/img/social-icons/circle-black-bordered/instagram-circle-black-bordered.png" alt="Inst" width="24" height="24"></a></td>
-                                                                                                    <td align="center" valign="top" esd-tmp-icon-type="youtube"><a target="_blank" href="https://viewstripo.email"><img title="Youtube" src="https://tlr.stripocdn.email/content/assets/img/social-icons/circle-black-bordered/youtube-circle-black-bordered.png" alt="Yt" width="24" height="24"></a></td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="center" class="esd-block-text es-p10t es-p10b" esd-links-color="#ffffff" esd-links-underline="none">
-                                                                                        <p>You are receiving this email because you have visited our site or asked us about the regular newsletter. Make sure our messages get to your Inbox (and not your bulk or junk folders).<br><a target="_blank" href="https://viewstripo.email">Privacy police</a> | <a target="_blank">Unsubscribe</a></p>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
                                         </table>
                                     </td>
                                 </tr>
