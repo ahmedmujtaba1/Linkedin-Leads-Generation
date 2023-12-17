@@ -3,8 +3,11 @@ from email.mime.text import MIMEText
 from email.header import Header
 import smtplib
 import os
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 app_password = os.environ["GMAIL_APP_PASSWORD"]
+# print(app_password)
 
 def send_email(rec_email:str, name:str):
     sender_email = "saadmohsinparoopia@gmail.com"
