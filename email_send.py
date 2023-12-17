@@ -998,10 +998,10 @@ body {{
                                                                         <table cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>
                                                                                 <tr class="es-mobile-hidden">
-                                                                                    <td align="center" class="esd-block-spacer" height="130"></td>
+                                                                                    <td align="center" class="esd-block-spacer" height="10"></td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td align="" class="esd-block-text es-p5b" esd-links-underline="none">
+                                                                                    <td align="center" class="esd-block-text es-p4b" esd-links-underline="none">
                                                                                         <p> Gain a competitive edge by harnessing the power of web scraping. Extract valuable insights, monitor competitors, and stay ahead in the dynamic digital landscape.</p>
                                                                                         <h2><a target="_blank" style="text-decoration: none;" href="https://www.fiverr.com/mohsinharoon77/do-web-data-scraping-from-any-website-using-python-for-your-business">Order Our Web Scraping Service→</a></h2>
                                                                                     </td>
@@ -1052,7 +1052,7 @@ body {{
                                                                         <table cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>
                                                                                 <tr class="es-mobile-hidden">
-                                                                                    <td align="center" class="esd-block-spacer" height="130"></td>
+                                                                                    <td align="center" class="esd-block-spacer" height="10"></td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text es-p5b" esd-links-underline="none">
@@ -1106,7 +1106,7 @@ body {{
                                                                         <table cellpadding="0" cellspacing="0" width="100%">
                                                                             <tbody>
                                                                                 <tr class="es-mobile-hidden">
-                                                                                    <td align="center" class="esd-block-spacer" height="130"></td>
+                                                                                    <td align="center" class="esd-block-spacer" height="10"></td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td align="center" class="esd-block-text es-p5b" esd-links-underline="none">
