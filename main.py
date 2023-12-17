@@ -4,6 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time, csv, pickle
 import undetected_chromedriver as uc
+from email_send import send_email
 
 #--------------------------------------------------------#
 
@@ -101,6 +102,10 @@ for i in range(50):
         print("Email [2] : ", email2)
         print("Phone Number [1] : ", phone_number1)
         print("Phone Number [2] : ", phone_number2)
+        if email1:
+            send_email(email1, lead_name)
+        if email2:
+            send_email(email2, lead_name)
         with open('output.csv', 'a', newline='', encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow([lead_name, headline, profile_url, email1, email2, phone_number1, phone_number2])
