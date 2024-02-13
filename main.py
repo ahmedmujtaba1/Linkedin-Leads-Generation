@@ -26,7 +26,7 @@ print('[+] This is made by "Ahmed Mujtaba" ')
 driver = webdriver.Chrome(options=options)
 driver.maximize_window()
 wait = WebDriverWait(driver, 5)
-keywords = ["ceo"]
+keywords = ["real estate"]
 keyword_num = 0
 keyword = keywords[keyword_num]
 url = f"https://www.linkedin.com/search/results/people/?keywords={keyword.replace(' ','+')}"
@@ -53,7 +53,7 @@ try:
     driver.find_element(By.XPATH,"(//button[@class='msg-overlay-bubble-header__control msg-overlay-bubble-header__control--new-convo-btn artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--1 artdeco-button--tertiary ember-view'])[2]").click()
 except:pass
 print(f"Found [{len(all_leads)}] Leads on Page No # [{page_no}]")
-for i in range(50):
+for i in range(500000000000):
     cnt += 1
     lead_name = wait.until(EC.presence_of_element_located((By.XPATH,f"(//li[@class='reusable-search__result-container']//span[@class='entity-result__title-line entity-result__title-line--2-lines ']//a)[{cnt}]"))).text
     if "LinkedIn" not in str(lead_name):
@@ -67,7 +67,9 @@ for i in range(50):
         time.sleep(2)
         driver.refresh()
         time.sleep(2)
-        wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extension_company_product_name']//span[1]")))
+        try:
+            wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extension_company_product_name']//span[1]")))
+        except:pass
         try:
             wait.until(EC.presence_of_element_located((By.ID,"KLMUnlockProfileInformation"))).click()
             time.sleep(2)
@@ -87,32 +89,36 @@ for i in range(50):
                         wait.until(EC.presence_of_element_located((By.ID,"KLMUnlockProfileInformation"))).click()
                         time.sleep(2)
                     except:pass
+        try:
+            email1 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_1']"))).text
+            email2 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_2']"))).text
+            phone_number1 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_3']"))).text
+            phone_number2 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_4']"))).text
+            print("Name : ", lead_name)
+            print("Headline : ", headline)
+            print("Linkedin URL : ", profile_url)
+            print("Email [1] : ", email1)
+            print("Email [2] : ", email2)
+            print("Phone Number [1] : ", phone_number1)
+            print("Phone Number [2] : ", phone_number2)
 
-        email1 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_1']"))).text
-        email2 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_2']"))).text
-        phone_number1 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_3']"))).text
-        phone_number2 = wait.until(EC.presence_of_element_located((By.XPATH,"//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowData']//div[@class='KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContent KLM_extensionSingleProfileViewWrapperBlockSingleRowDataContentContactData_4']"))).text
+            if email1:
+                send_email(email1, lead_name)
+            if email2:
+                send_email(email2, lead_name)
+            with open('output.csv', 'a', newline='', encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerow([lead_name, headline, profile_url, email1, email2, phone_number1, phone_number2])
+            
+            found_lead += 1
+            print(f"Found [{found_lead}] LEADs")
+            print("-----------------------------------------------------")
+
+        except:pass
         # time.sleep(500000)
         driver.close()
         driver.switch_to.window(driver.window_handles[0])
-        print("Name : ", lead_name)
-        print("Headline : ", headline)
-        print("Linkedin URL : ", profile_url)
-        print("Email [1] : ", email1)
-        print("Email [2] : ", email2)
-        print("Phone Number [1] : ", phone_number1)
-        print("Phone Number [2] : ", phone_number2)
-        if email1:
-            send_email(email1, lead_name)
-        if email2:
-            send_email(email2, lead_name)
-        with open('output.csv', 'a', newline='', encoding="utf-8") as f:
-            writer = csv.writer(f)
-            writer.writerow([lead_name, headline, profile_url, email1, email2, phone_number1, phone_number2])
-        
-        found_lead += 1
-        print(f"Found [{found_lead}] LEADs")
-        print("-----------------------------------------------------")
+
     if cnt == len(all_leads):
         last_lead = driver.find_element(By.XPATH,f"(//li[@class='reusable-search__result-container']//div[@class='entity-result__primary-subtitle t-14 t-black t-normal'])[{cnt}]")
         driver.execute_script("arguments[0].scrollIntoView();", last_lead)

@@ -943,7 +943,7 @@ def send_email(rec_email:str, name:str):
                                                                             <table width="100%" cellspacing="0" cellpadding="0">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td align="center" class="esd-block-banner" style="position: relative;" esdev-config="h1"><a target="_blank" href=""><img class="adapt-img esdev-stretch-width esdev-banner-rendered" src="https://imgtr.ee/images/2023/12/16/43d744bae00ccbc532fa2bf36a02b869.png" alt title width="380" height="300" style="display: block;"></a></td>
+                                                                                        <td align="center" class="esd-block-banner" style="position: relative;" esdev-config="h1"><a target="_blank" href=""><img class="adapt-img esdev-stretch-width esdev-banner-rendered" src="https://i.ibb.co/MVJCvjX/logo.png" alt title width="380" height="300" style="display: block;"></a></td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
@@ -963,11 +963,12 @@ def send_email(rec_email:str, name:str):
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td align="center" class="esd-block-text es-p20t es-p20b">
-                                                                                            <h1>Hey&nbsp;{name}!</h1>
+                                                                                            <h1>Welcome to <a href='https://mas-tech.vercel.app/'>Mas Tech<a>👋, Hey&nbsp;{name}!. I hope you are fine.</h1>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td align="center" class="esd-block-text es-p30b">
+                                                                                            <p>You can see Our Website using this <a href='https://mas-tech.vercel.app/'>link</a>
                                                                                             <p>I trust this message finds you well. We are reaching out to you with excitement, as we are eager to introduce our diverse range of services tailored to meet your technological needs.</p>
                                                                                         </td>
                                                                                     </tr>
@@ -1169,3 +1170,5 @@ def send_email(rec_email:str, name:str):
         print('Email sent successfully to ', rec_email ,"!")
     except Exception as e:
         print(f'An error occurred: {e}')
+
+# send_email('toby.smith@condenast.com', 'Toby Smith')
