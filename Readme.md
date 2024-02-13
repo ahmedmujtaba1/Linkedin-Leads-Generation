@@ -17,12 +17,13 @@ Before running the scripts, ensure you have the following:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/linkedin-leads-generation.git
-
+   git clone https://github.com/ahmedmujtaba1/Linkedin-Leads-Generation.git
+   
 2. Install the required modules.
-3. Download the appropriate WebDriver and place it in the project directory.
-4. Configure your LinkedIn credentials and search parameters in the cookies.pkl.
-5. Run the script:
+3. Make Account on [ALLFORLEADS](https://www.allforleads.com/)
+4. Download the appropriate WebDriver and place it in the project directory.
+5. Configure your LinkedIn credentials and search parameters in the cookies.pkl.
+6. Run the script:
    ```bash
    python main.py
 
